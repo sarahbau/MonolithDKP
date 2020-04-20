@@ -185,7 +185,7 @@ function MonDKP_OnEvent(self, event, arg1, ...)
 		self:UnregisterEvent("ADDON_LOADED")
 	elseif event == "BOSS_KILL" then
 		MonDKP:CheckOfficer()
-		if core.IsOfficer and IsInRaid() then
+		if core.IsOfficer and IsInRaid() and core.RaidInProgress then
 			local boss_name = ...;
 
 			if MonDKP:Table_Search(core.EncounterList, arg1) then
